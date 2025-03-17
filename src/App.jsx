@@ -1,4 +1,3 @@
-import './App.css'
 import HomeScreen from './Screens/HomeScreen/HomeScreen';
 
 
