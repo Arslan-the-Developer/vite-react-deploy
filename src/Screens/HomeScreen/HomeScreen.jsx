@@ -1,28 +1,8 @@
 import React, { useEffect } from 'react'
 import Navbar from './Components/Navbar'
-import axios from 'axios'
-import ShinyText from '../../Components/ShinyText/ShinyText'
-import FuzzyText from '../../Components/FuzzyText/FuzzyText'
-
+import BlurText from '../../Components/BlurText/BlurText'
 
 function HomeScreen() {
-
-    async function GetBlogsFromEB() {
-
-        const response = await axios.get('https://79c9-58-27-197-114.ngrok-free.app/authentication/check_user_authentication', {
-          withCredentials: true,
-          headers: {
-            'ngrok-skip-browser-warning': '1'
-          }
-        });
-
-        console.log(response.data);
-        
-    }
-
-    useEffect(() => {
-        GetBlogsFromEB();
-    }, []);
 
 
   return (
@@ -34,9 +14,14 @@ function HomeScreen() {
             <h2 className='text-3xl'>Welcome To Site</h2>
             <h2 className='text-3xl mt-6'>Everything Is Working Correctly</h2>
 
-            <span className='bg-black'>
-                <FuzzyText baseIntensity={0.2} hoverIntensity={1} enableHover={true}>404</FuzzyText>
-                <ShinyText text="Just some shiny text!" disabled={false} speed={3} className='custom-class' />
+            <span className=''>
+            <BlurText
+              text="Arslan Ahmed"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="text-2xl mb-8"
+            />
             </span>
 
         </div>
