@@ -7,20 +7,22 @@ import FuzzyText from '../../Components/FuzzyText/FuzzyText'
 
 function HomeScreen() {
 
-    // async function GetBlogsFromEB() {
+    async function GetBlogsFromEB() {
 
-    //     const response = await axios({
-    //         url : "http://newsampleapplication-env.eba-pzcj3etk.us-east-1.elasticbeanstalk.com/get_blog_posts",
-    //         method : "get",
-    //     });
+        const response = await axios({
+            url : "https://79c9-58-27-197-114.ngrok-free.app/authentication/check_user_authentication",
+            method : "get",
+            withCredentials : true,
+        });
 
-    //     console.log(response.data);
+        console.log(response.data);
         
-    // }
+    }
 
-    // useEffect(() => {
-    //     GetBlogsFromEB();
-    // }, []);
+    useEffect(() => {
+        GetBlogsFromEB();
+    }, []);
+
 
   return (
 
