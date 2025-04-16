@@ -9,10 +9,11 @@ function HomeScreen() {
 
     async function GetBlogsFromEB() {
 
-        const response = await axios({
-            url : "https://79c9-58-27-197-114.ngrok-free.app/authentication/check_user_authentication",
-            method : "get",
-            withCredentials : true,
+        const response = await axios.get('https://79c9-58-27-197-114.ngrok-free.app/authentication/check_user_authentication', {
+          withCredentials: true,
+          headers: {
+            'ngrok-skip-browser-warning': '1'
+          }
         });
 
         console.log(response.data);
